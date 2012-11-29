@@ -1,6 +1,6 @@
 function createRepl(language, config, cb) {
   var repl = new JSREPL(config)
-  repl.loadLanguage(language, function() {
+  repl.loadLanguage(language, false, function() {
     cb(repl)
   })
 }

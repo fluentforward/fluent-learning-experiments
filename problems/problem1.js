@@ -23,9 +23,9 @@
       "after" : ["def solution(n)\nif n % 5 == 0 && n % 3 == 0 then return 'fizzbuzz'\nelsif n % 5 == 0 then return 'buzz'\nelsif n % 3 == 0 then return 'fizz'\nelse return n\nend\nend","def allok()\nok = true\n1.upto(100) do |i|\nif fizzbuzz(i) != solution(i) then\nprint 'Fail: expected '+solution(i).to_s()+' but got '+fizzbuzz(i).to_s()+' for '+i.to_s()\nend\nok = ok && fizzbuzz(i)==solution(i)\nend\nreturn ok\nend","allok()"]
     },
     {
-      "language" : "scheme",
-      "initial" : "d",
-      "after" : ""
+      "language" : "clojure",
+      "initial" : "(defn fizzbuzz [n])",
+      "after" : ["(defn solution [n] (if (zero? (mod n 5)) (if (zero? (mod n 3)) \"fizzbuzz\" \"buzz\") (if (zero? (mod n 3)) \"fizz\" n)))","(defn allok [] (loop [ok true i 0] (if (= 101 i) ok (let [s (solution i) f (fizzbuzz i)] (if (= s f) (recur ok (inc i)) (do (println \"Fail: Expected \" s \"  but got \" f \" for \" i) (recur false (inc i))))))))","(allok)"]
     }
   ]  
 }

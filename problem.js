@@ -71,11 +71,8 @@ function initProblem(Y, id,data, container) {
   }
 
   var onResult = function(x) { 
-    console.log('res',x)
     returned++
     if (returned == sent) {      
-      console.log(typeof(x))
-      console.log('x is '+x.toLowerCase()+'.')
       if (x && x.toLowerCase() == "true") {        
         successDiv.show()
       } else {
@@ -98,6 +95,7 @@ function initProblem(Y, id,data, container) {
   }  
   
   var runProblem = function() {
+    successDiv.hide()
     runButton.hide()
     loader.show()
     sent = 0

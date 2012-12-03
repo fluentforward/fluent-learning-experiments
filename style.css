@@ -115,3 +115,13 @@ white-space: pre;
 width: 100px;
 word-spacing: 0px;
 }
+
+.ace_editor {
+  font-size: 12px;
+  line-height:16px;  
+}
+
+.ace_editor .ace_line {
+  height: 16px;
+  line-height: 16px;
+}

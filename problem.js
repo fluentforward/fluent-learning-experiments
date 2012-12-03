@@ -5,7 +5,7 @@ function createRepl(language, config, cb) {
   })
 }
 
-function initProblem(Y, id,data, container) {
+function initProblem(base,Y, id,data, container) {
   var editorid = 'problem-editor-'+id
   var title = Y.Node.create('<h3>' + data.title + '</p>')
   var descriptions = Y.Node.create('<div></div>')  
@@ -15,7 +15,7 @@ function initProblem(Y, id,data, container) {
   var runButton = Y.Node.create(' <center><input class="button runbutton" type="submit" value="Run"></input></center>')
   var resultsDiv = Y.Node.create('<div id="result" style="border: solid 1px;white-space: pre;width: 540px;padding: 5px;font-family: courier; font-size:11px;max-height:250px;overflow:scroll;">Exercise results</div>')
   var successDiv = Y.Node.create('<center><p>Congratulations! You just passed this exercise!</p></center>')
-  var loader = Y.Node.create('<center><img src="ajax-loader.gif"></img></center>')
+  var loader = Y.Node.create('<center><img src="'+base+'ajax-loader.gif"></img></center>')
   var language = 0
   var sent = 0
   var returned = 0
@@ -153,7 +153,7 @@ function loadProblem(base,id) {
         success: function(x,o) {
           try {
             data = Y.JSON.parse(o.responseText)            
-            initProblem(Y,id,data,problemContainer)
+            initProblem(base,Y,id,data,problemContainer)
           } catch  (e) {
             console.error(e)
           }

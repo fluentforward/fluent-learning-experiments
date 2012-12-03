@@ -144,11 +144,11 @@ function initProblem(Y, id,data, container) {
   selectLanguage(0)
 }
 
-function loadProblem(id) {
+function loadProblem(base,id) {
   YUI().use('node','io','json-parse', function(Y) {
     var problemContainer = Y.one('#problem'+id)
     
-    Y.io('problems/problem'+id+'.js', {
+    Y.io(base+'problems/problem'+id+'.js', {
       on: {
         success: function(x,o) {
           try {

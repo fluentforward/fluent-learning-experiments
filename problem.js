@@ -12,7 +12,7 @@ function initProblem(base,Y, id,data, container) {
   var inputBlock = Y.Node.create('<div style="height: 300px"></div>')
   var languagesBlock = Y.Node.create('<div></div>')
   var textArea = Y.Node.create('<div id="'+editorid+'" style="width: 550px; height: 250px"></div>')
-  var runButton = Y.Node.create(' <center><input class="button runbutton" type="submit" value="Run"></input></center>')
+  var runButton = Y.Node.create(' <center><input class="button runbutton" type="submit" value="Run Code!"></input></center>')
   var resultsDiv = Y.Node.create('<div id="result" style="border: solid 1px;white-space: pre;width: 540px;padding: 5px;font-family: courier; font-size:11px;max-height:250px;overflow:scroll;">Exercise results</div>')
   var successDiv = Y.Node.create('<center><p>Congratulations! You just passed this exercise!</p></center>')
   var loader = Y.Node.create('<center><img src="'+base+'ajax-loader.gif"></img></center>')

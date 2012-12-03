@@ -126,6 +126,6 @@ word-spacing: 0px;
   line-height: 16px;
 }
 
-input[type=submit].runbutton {
+center input[type=submit].runbutton {
   font-size: 24px;
 }

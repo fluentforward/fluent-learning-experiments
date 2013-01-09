@@ -20,6 +20,7 @@ function initProblem(base,Y, id,sharelink,data, container) {
   var sent = 0
   var returned = 0
   var editor
+  var lastEditValues = {}
 
   loader.hide()
   resultsDiv.hide()
@@ -36,6 +37,9 @@ function initProblem(base,Y, id,sharelink,data, container) {
   }
 
   var selectLanguage = function(n) {
+    if (language != undefined)
+      lastEditValues[language] = editor.getValue()
+
     language = n
     
     languagesBlock.get('childNodes').remove()
@@ -47,8 +51,9 @@ function initProblem(base,Y, id,sharelink,data, container) {
       languagesBlock.append(languageButton)
     }
 
-    if (data.languages[language].initial) {
-      editor.setValue(data.languages[language].initial)
+    var initial = lastEditValues[language] || data.languages[language].initial
+    if (initial) {
+      editor.setValue(initial)
     }
 
     editor.getSession().setMode("ace/mode/"+data.languages[language].language);

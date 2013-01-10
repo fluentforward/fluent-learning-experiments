@@ -133,8 +133,13 @@ function initProblem(base,Y, id,sharelink,data, container) {
         sent++
         repl.eval(data.languages[language].before)
       }
-      sent++
-      repl.eval(script)
+      
+      var cmds = script.split('\n\n')
+      for (var i=0; i < cmds.length; i++) {
+        sent++
+        repl.eval(cmds[i])
+      }
+
       if (typeof(data.languages[language].after) == 'string') {
         sent++
         repl.eval(data.languages[language].after)

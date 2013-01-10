@@ -133,7 +133,7 @@ function initProblem(base,Y, id,sharelink,data, container) {
         sent++
         repl.eval(data.languages[language].before)
       }
-      
+
       var cmds = script.split('\n\n')
       for (var i=0; i < cmds.length; i++) {
         sent++
@@ -174,15 +174,18 @@ function initProblem(base,Y, id,sharelink,data, container) {
   , solutionLanguage = getParameterByName('solutionLanguage')
   , solution = getParameterByName('solution')
 
-  if (solution != undefined && solutionLanguage != undefined) {
+  if (solution != undefined && solutionLanguage != undefined && solutionLanguage != '') {
     var targetLanguage
     for (var i=0; i < data.languages.length && targetLanguage == undefined; i++) {
       if (data.languages[i].language == solutionLanguage) {
         targetLanguage = i
       }
     }
-    selectLanguage(targetLanguage)
-    editor.setValue(solution)
+    if (targetLanguage != undefined) {
+      selectLanguage(targetLanguage)
+      editor.setValue(solution)
+      selectLanguage(0)    
+    }    
   } else {
     selectLanguage(0)    
   }

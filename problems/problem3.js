@@ -1,6 +1,6 @@
 {
   "title" : "Exercise 3 : The string calculator in PHP",
-  "descriptions" : ["For this exercise, your task is to create a function, which when given an input word and a list of words will return a count of the number of words from the word list which are an anagram of the input word."],
+  "descriptions" : ["For this exercise, your task is to create a class StringCalculator with a method, add, which when given a string will return the sum of all numbers within the string, where each number is separated by either a comma or a newline. If the string is empty, then 0 should be returned. "],
   "languages" : [    
     {
       "language" : "php",
